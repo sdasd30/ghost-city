@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 7950912965365836860}
   - component: {fileID: 1586407698}
   - component: {fileID: 4621191257873360589}
+  - component: {fileID: 5135736372945366705}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -300,7 +301,7 @@ MonoBehaviour:
   - {x: -0.21439952, y: -0.5165471, z: 0}
   m_ShapePathHash: 618876598
   m_Mesh: {fileID: 0}
-  m_InstanceId: -45586
+  m_InstanceId: 33252
 --- !u!114 &4621191257873360589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,3 +315,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactButton: F
+--- !u!114 &5135736372945366705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7950912965370265278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 726d8e946fa5f4d839c76560beda28dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  healthBar: {fileID: 0}

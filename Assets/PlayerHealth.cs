@@ -1,5 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+/* 
+ * Author: Richard
+ * Description: Controls what hurts the player and how much damage the hurt deals
+*/
+
+
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
