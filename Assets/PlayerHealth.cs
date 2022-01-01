@@ -9,9 +9,21 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
 
+    [SerializeField] private Transform respawnPoint;
+    [SerializeField] private Transform Player;
+
     public int maxHealth = 100;
     public int currentHealth;
     public HealthBar healthBar;
+
+
+    //Function that lowers player's health
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        healthBar.SetHealth(currentHealth);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -27,16 +39,29 @@ public class PlayerHealth : MonoBehaviour
 
         //Going to change depending on what hurts the game object
 
-        if (Input.GetKeyDown(KeyCode.P))
+
+        //Not working
+        void OnTriggerEnter(Collider2D coll)
+
         {
-            TakeDamage(1);
+            if (coll.gameObject.CompareTag("Enemy"))
+            {
+                TakeDamage(1);
+                Player.transform.position = respawnPoint.transform.position;
+
+            }
+        }
+
+
+
+        //If Health = 0, player dies
+        if (currentHealth <= 0)
+        {
+            Player.transform.position = respawnPoint.transform.position;
+            currentHealth = 100;
+
         }
     }
 
-    void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
 
-        healthBar.SetHealth(currentHealth);
-    }
 }

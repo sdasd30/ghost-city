@@ -1,5 +1,5 @@
 /*
- * Author: Isaac and Richard
+ * Author: Isaac
  * Description: Controls enemy prefab
  */
 

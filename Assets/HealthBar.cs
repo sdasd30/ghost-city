@@ -1,13 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
+/*
+ * Author: Richard
+ * Description: Health UI and Player Damage Controller
+*/ 
+
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
+    public float health;
     public Slider slider;
     public Gradient gradient;
     public Image fill;
+    public Text text;
 
     public void SetMaxHealth(int health)
     {
@@ -22,5 +27,17 @@ public class HealthBar : MonoBehaviour
         slider.value = health;
 
         fill.color = gradient.Evaluate(slider.normalizedValue);
+
+        text.text = "Health: " + health; 
     }
+
+
+    //Not working
+    void OnCollisionEnter(Collision obj)
+    {
+        if (obj.gameObject.tag == "Enemy")
+            health = health - 1f;
+    }
+
+
 }
