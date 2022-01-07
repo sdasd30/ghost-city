@@ -3,11 +3,14 @@
  * Description: Contains general info and methods related to the player
  */
 
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     Vector2 spawnPoint;
+
+    public List<GameObject> inventory;
 
     public int maxHealth = 100;
     public int currentHealth;
@@ -20,11 +23,14 @@ public class Player : MonoBehaviour
     // CHANGE THIS IF BUTTON USED FOR INTERACTION CHANGES OR EVERYTHING WILL BE WRONG
     public string interactButton = "F";
 
-    void Start()
+    void Awake()
     {
+        inventory = new List<GameObject>();
+
         spawnPoint = transform.position;
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+
+        UpdateHealthBar();
     }
 
     void Update()
@@ -42,7 +48,9 @@ public class Player : MonoBehaviour
 
     public void AddToInventory(GameObject item)
     {
-        //add item to inventory
+        item.GetComponent<InteractableItem>().enabled = false;
+
+        inventory.Add(item);
     }
 
     public void Respawn()
@@ -54,6 +62,13 @@ public class Player : MonoBehaviour
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
+
+        UpdateHealthBar();
+    }
+
+    public void UpdateHealthBar()
+    {
+        healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currentHealth);
     }
 

@@ -104,7 +104,6 @@ GameObject:
   - component: {fileID: 4010638200711945445}
   - component: {fileID: 4010638200711945442}
   - component: {fileID: 4010638200711945443}
-  - component: {fileID: 4010638200711945444}
   m_Layer: 5
   m_Name: Prompt
   m_TagString: Untagged
@@ -193,15 +192,3 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4010638200711945444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4010638200711945441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ae38bf4a3e1d3b46b17e67cbf66c1ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
