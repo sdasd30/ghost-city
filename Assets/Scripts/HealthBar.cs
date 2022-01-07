@@ -28,16 +28,6 @@ public class HealthBar : MonoBehaviour
 
         fill.color = gradient.Evaluate(slider.normalizedValue);
 
-        text.text = "Health: " + health; 
+        text.text = "Health: " + health;
     }
-
-
-    //Not working
-    void OnCollisionEnter(Collision obj)
-    {
-        if (obj.gameObject.tag == "Enemy")
-            health = health - 1f;
-    }
-
-
 }

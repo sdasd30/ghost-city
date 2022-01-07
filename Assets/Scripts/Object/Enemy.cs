@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
 
     float distance = 2;
     float maxSpeed = 0.75f;
+    public int damage = 10;
 
     void Start()
     {
