@@ -20,7 +20,7 @@ public class InteractableItem : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire2") && prompt.activeInHierarchy)
         {
-            GameObject.Find("Player").GetComponent<Player>().AddToInventory(gameObject);
+            GameObject.Find("Player").GetComponent<Inventory>().AddToInventory(gameObject);
         }
     }
 
