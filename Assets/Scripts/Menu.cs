@@ -7,7 +7,7 @@ public class Menu : MonoBehaviour
 {
     public GameObject pauseMenu;
 
-    Player player;
+    GameObject player;
 
     string saveDirectory;
 
@@ -17,9 +17,9 @@ public class Menu : MonoBehaviour
     {
         saveDirectory = Application.persistentDataPath + "/Saves/";
 
-        player = GameObject.Find("Player").GetComponent<Player>();
-
         pauseMenu.SetActive(false);
+
+        player = GameObject.Find("Player");
 
         if (Directory.Exists(saveDirectory))
         {
@@ -33,10 +33,9 @@ public class Menu : MonoBehaviour
 
                 GameSave save = (GameSave)bf.Deserialize(file);
 
-                player.maxHealth = save.player.maxHealth;
-                player.currentHealth = save.player.health;
-
-                player.UpdateHealthBar();
+                player.GetComponent<HasHealthBar>().maxHealth = save.player.maxHealth;
+                player.GetComponent<HasHealthBar>().currentHealth = save.player.health;
+                player.GetComponent<HasHealthBar>().UpdateHealthBar();
 
                 file.Close();
             }
@@ -59,7 +58,7 @@ public class Menu : MonoBehaviour
 
     public void Quit()
     {
-        GameObject[] inventoryItems = player.inventory.ToArray();
+        GameObject[] inventoryItems = player.GetComponent<Inventory>().inventory.ToArray();
 
         InteractableItemSave[] inventory = new InteractableItemSave[inventoryItems.Length];
 
@@ -71,8 +70,8 @@ public class Menu : MonoBehaviour
         PlayerSave playerSave = new PlayerSave();
 
         playerSave.inventory = inventory;
-        playerSave.health = player.currentHealth;
-        playerSave.maxHealth = player.maxHealth;
+        playerSave.health = player.GetComponent<HasHealthBar>().currentHealth;
+        playerSave.maxHealth = player.GetComponent<HasHealthBar>().maxHealth;
 
         GameSave save = new GameSave();
 
