@@ -4,7 +4,7 @@ public class SpawnableObject : MonoBehaviour
 {
     Vector2 spawnPoint;
 
-    bool respawnOnDeath = false;
+    public bool respawnOnDeath = false;
 
     void Awake()
     {
