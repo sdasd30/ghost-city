@@ -70,10 +70,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1963317607
+  m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 16a2a7e28d0eb344a8fa7d2fcbf1e6c6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b0343314dfed1a04e8e66d93d0f7423b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8670172792728473520}
   m_LocalRotation: {x: -0, y: -0, z: 0.9999995, w: -0.000965608}
-  m_LocalPosition: {x: -0.37, y: 0.831, z: 0}
+  m_LocalPosition: {x: -0.117, y: 0.776, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.47034472}
   m_Children: []
   m_Father: {fileID: 8670172791306616307}
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Intensity: 2
   m_LightVolumeIntensity: 0
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: df20201c9926fa8a00000000
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
